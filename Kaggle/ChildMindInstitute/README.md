@@ -32,3 +32,37 @@ Series ID: 038441c925bb
     * timestamp - A corresponding datetime.
     * anglez - As calculated and described by the GGIR package, z-angle is a metric derived from individual accelerometer components that is commonly used in sleep detection, and refers to the angle of the arm relative to the vertical axis of the body.
     * enmo - Euclidean Norm Minus One of all accelerometer signals, with negative values rounded to zero.
+
+## Training
+* How did i train
+* how long did it take
+* training curves
+* how did you decide to stop training
+* difficulties?
+
+## Performance Comparison
+* Clearly define the key performance metrics
+* show/compare results in one table
+* show visualizations, ROC curve
+
+## Conclusions
+* example LSTM worked better than GRU
+
+## Future Work
+* what is the next thing I would like to try
+* What are some other studies that can be done starting from here
+
+# How to reproduce results
+## Overview of files in repository
+ * Directory stucture
+ * relevant files and thier role
+     * train_series.parquet - Series to be used as training data. Each series is a continuous recording of accelerometer data for a single subject spanning many days.
+     * test_series.parquet - Series to be used as the test data, containing the same fields as above. You will predict event occurrences for series in this file.
+     * train_events.csv - Sleep logs for series in the training set recording onset and wake events.
+     * sample_submission.csv - A sample submission file in the correct format.
+## Software Setup
+* list required packages
+## Data
+* where to download data
+## Training
+* describe how to train the model
