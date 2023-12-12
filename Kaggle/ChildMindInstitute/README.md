@@ -24,4 +24,11 @@ series ID: 0402a003dae9
 series ID: 03d92c9f6f8a
 ![image](https://github.com/alexmach7/DATA3402/assets/113038988/fba222a4-6e5d-4bf4-b19c-97efb48c880e)
 series ID: 038441c925bb
-
+## Problem Formulation
+* Define
+ * Input
+    * series_id - Unique identifier for each accelerometer series.
+    * step - An integer timestep for each observation within a series.
+    * timestamp - A corresponding datetime
+    * anglez - As calculated and described by the GGIR package, z-angle is a metric derived from individual accelerometer components that is commonly used in sleep detection, and refers to the angle of the arm relative to the vertical axis of the body
+    *enmo - Euclidean Norm Minus One of all accelerometer signals, with negative values rounded to zero
