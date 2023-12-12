@@ -26,7 +26,7 @@ Series ID: 03d92c9f6f8a
 Series ID: 038441c925bb
 ## Problem Formulation
 * Define
- * Input
+  * Input
     * series_id - Unique identifier for each accelerometer series.
     * step - An integer timestep for each observation within a series.
     * timestamp - A corresponding datetime.
