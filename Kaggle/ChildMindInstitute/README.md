@@ -15,20 +15,20 @@
 ## Data Visualization
 ### Comparing Series
 ![image](https://github.com/alexmach7/DATA3402/assets/113038988/483fb552-38e0-432c-a972-929d5b88ff05)
-series ID: 05e1944c3818
+Series ID: 05e1944c3818
 ![image](https://github.com/alexmach7/DATA3402/assets/113038988/43ecb644-178d-4b0e-afe6-254998c72f8b)
-series ID: 04f547b8017d
+Series ID: 04f547b8017d
 ![image](https://github.com/alexmach7/DATA3402/assets/113038988/321200f1-db25-4357-834b-721915b9e7a2)
-series ID: 0402a003dae9
+Series ID: 0402a003dae9
 ![image](https://github.com/alexmach7/DATA3402/assets/113038988/ae3301d9-796e-401b-8a2d-4dbb592b24ae)
-series ID: 03d92c9f6f8a
+Series ID: 03d92c9f6f8a
 ![image](https://github.com/alexmach7/DATA3402/assets/113038988/fba222a4-6e5d-4bf4-b19c-97efb48c880e)
-series ID: 038441c925bb
+Series ID: 038441c925bb
 ## Problem Formulation
 * Define
  * Input
     * series_id - Unique identifier for each accelerometer series.
     * step - An integer timestep for each observation within a series.
-    * timestamp - A corresponding datetime
-    * anglez - As calculated and described by the GGIR package, z-angle is a metric derived from individual accelerometer components that is commonly used in sleep detection, and refers to the angle of the arm relative to the vertical axis of the body
-    *enmo - Euclidean Norm Minus One of all accelerometer signals, with negative values rounded to zero
+    * timestamp - A corresponding datetime.
+    * anglez - As calculated and described by the GGIR package, z-angle is a metric derived from individual accelerometer components that is commonly used in sleep detection, and refers to the angle of the arm relative to the vertical axis of the body.
+    * enmo - Euclidean Norm Minus One of all accelerometer signals, with negative values rounded to zero.
