@@ -11,7 +11,7 @@
     * Size: 986.46 MB
     * Instances: 500 multi-day recordings, roughly as many nights recorded for a series as there are 24-hour periods in that series.
 ## Processing/Clean up
-* Randomly selected 40 patients to study. Removed NaN values.
+* Randomly selected 40 patients to study. Removed NaN values and aligned 'series_id', 'enmo', 'anglez', and 'event' using 'timestamp'.
 ## Data Visualization
 ### Comparing Series
 ![image](https://github.com/alexmach7/DATA3402/assets/113038988/483fb552-38e0-432c-a972-929d5b88ff05)
@@ -28,21 +28,20 @@ Series ID: 038441c925bb
 * Define
   * Input
     * series_id - Unique identifier for each accelerometer series.
-    * step - An integer timestep for each observation within a series.
     * timestamp - A corresponding datetime.
     * anglez - As calculated and described by the GGIR package, z-angle is a metric derived from individual accelerometer components that is commonly used in sleep detection, and refers to the angle of the arm relative to the vertical axis of the body.
     * enmo - Euclidean Norm Minus One of all accelerometer signals, with negative values rounded to zero.
 
 ## Training
-* How did i train
-* how long did it take
-* training curves
-* how did you decide to stop training
-* difficulties?
+* I trained with a Decision Tree.
+* The area under the ROC curve was 0.54.
+* I spent a lot of time preparing my data but wish I could have focused more on training.
 
 ## Performance Comparison
 * Clearly define the key performance metrics
-* show/compare results in one table
+![image](https://github.com/alexmach7/DATA3402/assets/113038988/db5fcf8f-dff9-4753-8ce3-57cb3b39b17b)
+
+
 * show visualizations, ROC curve
 
 ## Conclusions
