@@ -38,11 +38,14 @@ Series ID: 038441c925bb
 * I spent a lot of time preparing my data but wish I could have focused more on training.
 
 ## Performance Comparison
-* Clearly define the key performance metrics
+* Accuracy = (Number of Correct Predictions) / (Total Number of Predictions)
+* Precision = (True Positives) / (True Positives + False Positives)
+* Recall = (True Positives) / (True Positives + False Negatives)
+* F1 Score = 2 * ((Precision * Recall) / (Precision + Recall))
+* The ROC curve is created by plotting the true positive rate on the y-axis against the false positive rate on the x-axis for different threshold values.
 ![image](https://github.com/alexmach7/DATA3402/assets/113038988/db5fcf8f-dff9-4753-8ce3-57cb3b39b17b)
+![image](https://github.com/alexmach7/DATA3402/assets/113038988/045b44c6-868c-45f9-a131-a9603f262e33)
 
-
-* show visualizations, ROC curve
 
 ## Conclusions
 * example LSTM worked better than GRU
