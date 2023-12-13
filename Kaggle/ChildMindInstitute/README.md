@@ -11,7 +11,7 @@
     * Size: 986.46 MB
     * Instances: 500 multi-day recordings, roughly as many nights recorded for a series as there are 24-hour periods in that series.
 ## Processing/Clean up
-* Removed false sleep and onset from when the accelerometer was removed.
+* Randomly selected 50 patients to study.
 ## Data Visualization
 ### Comparing Series
 ![image](https://github.com/alexmach7/DATA3402/assets/113038988/483fb552-38e0-432c-a972-929d5b88ff05)
