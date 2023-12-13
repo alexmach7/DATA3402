@@ -51,7 +51,7 @@ Series ID: 038441c925bb
 * I chose a simple model but it was still close to accurate.
 
 ## Future Work
-* In the future I would like to compare more training models.
+* In the future I would like to compare more training models. I also only chose 40 patients to study because I was having trouble with my computer crashing. If I had been able to I would have liked to have a larger sample size. 
 
 # How to reproduce results
 ## Overview of files in repository
