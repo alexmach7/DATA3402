@@ -11,7 +11,7 @@
     * Size: 986.46 MB
     * Instances: 500 multi-day recordings, roughly as many nights recorded for a series as there are 24-hour periods in that series.
 ## Processing/Clean up
-* Randomly selected 40 patients to study. Removed NaN values and aligned 'series_id', 'enmo', 'anglez', and 'event' using 'timestamp'.
+* Randomly selected 40 patients to study. Removed false data from when the accelerometer was removed. Aligned 'series_id', 'enmo', 'anglez', and 'event' using 'timestamp'.
 ## Data Visualization
 ### Comparing Series
 ![image](https://github.com/alexmach7/DATA3402/assets/113038988/483fb552-38e0-432c-a972-929d5b88ff05)
@@ -48,23 +48,40 @@ Series ID: 038441c925bb
 
 
 ## Conclusions
-* example LSTM worked better than GRU
+* I chose a simple model but it was still close to accurate.
 
 ## Future Work
-* what is the next thing I would like to try
-* What are some other studies that can be done starting from here
+* In the future I would like to compare more training models.
 
 # How to reproduce results
 ## Overview of files in repository
- * Directory stucture
- * relevant files and thier role
+ * Relevant files:
      * train_series.parquet - Series to be used as training data. Each series is a continuous recording of accelerometer data for a single subject spanning many days.
      * test_series.parquet - Series to be used as the test data, containing the same fields as above. You will predict event occurrences for series in this file.
      * train_events.csv - Sleep logs for series in the training set recording onset and wake events.
      * sample_submission.csv - A sample submission file in the correct format.
 ## Software Setup
-* list required packages
+### Packages Needed
+* from pathlib import Path
+* import pyarrow.parquet as pq
+* import gc
+* import seaborn as sns
+* import matplotlib.pyplot as plt
+* import random
+* import pandas as pd
+* from sklearn.preprocessing import LabelEncoder
+* from sklearn.model_selection import train_test_split
+* from sklearn.tree import DecisionTreeClassifier
+* from sklearn.metrics import accuracy_score, classification_report
+* from sklearn.metrics import roc_curve, roc_auc_score
 ## Data
-* where to download data
+* Download data at: https://www.kaggle.com/competitions/child-mind-institute-detect-sleep-states/data
 ## Training
-* describe how to train the model
+X = merged_data[['enmo', 'anglez']]
+y = merged_data['event']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+model = DecisionTreeClassifier()
+
+model.fit(X_train, y_train)
