@@ -3,7 +3,6 @@
 * https://www.kaggle.com/competitions/child-mind-institute-detect-sleep-states/overview
 ## Overview
 * The task, as defined by the Kaggle challenge is to use time series of multi-day recordings to conduct more reliable sleep studies.
-* This problem is a time series analysis.
 * My model achieved an accuracy of 0.54. 
 ## Summary of Workdone
 ### Data
