@@ -3,15 +3,18 @@
 * https://www.kaggle.com/competitions/child-mind-institute-detect-sleep-states/overview
 ## Overview
 * The task, as defined by the Kaggle challenge is to use time series of multi-day recordings to conduct more reliable sleep studies.
+* This problem is a time series analysis.
+* My model achieved an accuracy of 0.54. 
 ## Summary of Workdone
 ### Data
 * Data:
   * Type:
     * Input: multi-day recordings of wrist-worn accelerometer data annotaed with onset and wakeup. Parquet file: train_series.parquet
+    * Input: CSV file of events train_events.csv
     * Size: 986.46 MB
     * Instances: 500 multi-day recordings, roughly as many nights recorded for a series as there are 24-hour periods in that series.
 ## Processing/Clean up
-* Randomly selected 40 patients to study. Removed false data from when the accelerometer was removed. Aligned 'series_id', 'enmo', 'anglez', and 'event' using 'timestamp'.
+* Randomly selected 40 patients to study. Removed false data from when the accelerometer was removed from the patient. Aligned 'series_id', 'enmo', 'anglez', and 'event' into a new dataframe using 'timestamp'.
 ## Data Visualization
 ### Comparing Series
 ![image](https://github.com/alexmach7/DATA3402/assets/113038988/483fb552-38e0-432c-a972-929d5b88ff05)
@@ -31,9 +34,11 @@ Series ID: 038441c925bb
     * timestamp - A corresponding datetime.
     * anglez - As calculated and described by the GGIR package, z-angle is a metric derived from individual accelerometer components that is commonly used in sleep detection, and refers to the angle of the arm relative to the vertical axis of the body.
     * enmo - Euclidean Norm Minus One of all accelerometer signals, with negative values rounded to zero.
+* I tried a Decision Tree model because I wanted to keep it simple.
 
 ## Training
 * I trained with a Decision Tree.
+* I used a Microsoft Windows Surface Pro 6
 * The area under the ROC curve was 0.54.
 * I spent a lot of time preparing my data but wish I could have focused more on training.
 
@@ -61,7 +66,7 @@ Series ID: 038441c925bb
      * train_events.csv - Sleep logs for series in the training set recording onset and wake events.
      * sample_submission.csv - A sample submission file in the correct format.
 ## Software Setup
-### Packages Needed
+### Packages Required
 * from pathlib import Path
 * import pyarrow.parquet as pq
 * import gc
@@ -85,3 +90,16 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 model = DecisionTreeClassifier()
 
 model.fit(X_train, y_train)
+## Performance Evaluation
+* Predictions  
+predictions = model.predict(X_test)
+  
+* Accuracy  
+accuracy = accuracy_score(y_test, predictions)  
+print(f'Accuracy: {accuracy}')
+
+* ROC curve  
+from sklearn.metrics import roc_curve, roc_auc_score  
+y_probs = model.predict_proba(X_test)[:, 1]  
+fpr, tpr, thresholds = roc_curve(y_test, y_probs)  
+auc = roc_auc_score(y_test, y_probs)
