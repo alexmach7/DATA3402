@@ -77,7 +77,7 @@ Series ID: 038441c925bb
 ## Data
 * Download data at: https://www.kaggle.com/competitions/child-mind-institute-detect-sleep-states/data
 ## Training
-X = merged_data[['enmo', 'anglez']]
+X = merged_data[['enmo', 'anglez']]  
 y = merged_data['event']
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
